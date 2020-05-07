@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
 
 const Home = () => {
 
@@ -16,6 +17,7 @@ const Home = () => {
     return (
         <div>
             <h2>Home Users</h2>
+            <Button variant="contained" color="primary">Hello World</Button>
             {
                 users.map(person => {
                     return (
