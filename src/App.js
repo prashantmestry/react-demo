@@ -13,6 +13,7 @@ function App() {
         <p>https://app.netlify.com/sites/jolly-jones-1aca2b/settings/deploys</p>
         <p>https://app.buddy.works/mestryprashant10/react-demo/pipelines</p>
         <p>https://jolly-jones-1aca2b.netlify.app/</p>
+        <p>work more</p>
       </header>
     </div>
   );
