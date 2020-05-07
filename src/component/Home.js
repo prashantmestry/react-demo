@@ -12,7 +12,7 @@ const Home = () => {
                 const persons = res.data;
                 setUsers(persons);
             })
-    })
+    },[])
 
     return (
         <div>
