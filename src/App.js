@@ -1,22 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import Home from './component/Home';
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-function App() {
+import LeftNavigation from './component/navigation/LeftNavigation';
+import Home from './component/Home';
+import About from './component/about/About';
+
+function App(props) {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" /> 
-        <Home />       
-        <h3>First demo for netlify and buddy work</h3>
-        <p>work with passion</p> 
-        <p>/Users/mestrpra/REACT/react-demo</p>       
-        <p>https://app.netlify.com/sites/jolly-jones-1aca2b/settings/deploys</p>
-        <p>https://app.buddy.works/mestryprashant10/react-demo/pipelines</p>
-        <p>https://jolly-jones-1aca2b.netlify.app/</p>
-        <p>work more</p>
-      </header>
+    <div>
+      <BrowserRouter>
+        <LeftNavigation />
+        <section>
+          <Switch>
+            <Route exact path='/' ><Home /></Route>
+            <Route exact path='/about' ><About /></Route>
+            <Route exact path='/shop' ><About /></Route>
+          </Switch>
+        </section>
+      </BrowserRouter>
     </div>
   );
 }
