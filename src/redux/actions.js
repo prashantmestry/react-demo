@@ -1,1 +1,5 @@
-export { getStatementList } from './finance/financeAction';
+export {
+    getStatementList,
+    getStatementType,
+    setCompanyInfo
+} from './finance/financeAction';

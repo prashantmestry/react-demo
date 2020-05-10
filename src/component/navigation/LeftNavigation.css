@@ -6,6 +6,7 @@
     width: 250px;
     background: #042331;
     transition: all .3s ease;
+    border-right: 1px solid #053245;
   }
   
   .sidebar header{
@@ -52,7 +53,7 @@
   label #btn{
     left : 10px;
     top : 25px;
-    font-size: 35px;
+    font-size: 20px;
     color: #fff;
     z-index: 5;
     border-radius: 3px;
@@ -63,9 +64,9 @@
   label #cancel{
     z-index: 10;
     left: -195px;
-    top: 17px;
-    font-size: 30px;
-    color: #0a5275;
+    top: 42px;
+    font-size: 20px;    
+    color : #fff;
     padding: 4px 9px;   
     transition: all .3s ease;
   }
@@ -88,11 +89,35 @@
     left : 195px;
   }
   
-  section{
-    background:url('../../images/ganesh.jpg');
-    background-position: center;
-    background-size: cover;
+  section{    
     height: 100vh;
     transition:  all .3s;
+    background: #02171f;
+    color: #fff;
   }
-  
+
+
+.links{  
+  margin-left :100px;
+}
+
+.links ul {
+  display: flex;
+  justify-content: center;
+  padding-top:25px;
+}
+
+.links ul li{
+  flex-direction:  row;   
+}
+
+.links ul li a{
+  color : #fff;
+  font-size: 20px;
+  padding:10px 15px 10px 15px;
+}
+
+.links ul li:hover a{
+  background: #063146;
+  border-radius: 4px;
+}

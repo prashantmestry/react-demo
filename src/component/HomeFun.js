@@ -1,45 +1,32 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import * as actions from '../redux/actions';
 import { connect } from 'react-redux';
 import PageTitle from './common/PageTitle';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 
-
-const Home = (props) => {
-
-    const [users, setUsers] = useState([]);
-
-    // const list = useSelector(state => {
-    //     console.log('all state' , state);
-    //     return state.finance.statement_list
-    // })
-    // const dispatch = useDispatch();
-
-    // useEffect(() => {
-    //     axios.get(`https://jsonplaceholder.typicode.com/users`)
-    //         .then(res => {
-    //             const persons = res.data;
-    //             setUsers(persons);
-    //         })
-    // }, [])
+const HomeFun = (props) => {
 
     useEffect(() => {
         props.getStatementList();
-        //props.getStatementType();
     }, []);
 
 
-    let setCompanyData = (info) => {
-        console.log('info ', info);
-        props.setCompanyInfo({ ...props.company, ...info });
+    let setInfoStmtId = (id) => {
+        console.log('stmt id ', id);
+        props.setCompanyInfo({ ...props.company, stmt_id: id });
     }
 
-    console.log('home comp render');
+    let setInfoStmtType = (id) => {
+        console.log('stmt type ', id);
+        props.setCompanyInfo({ ...props.company, stmt_type: id });
+    }
+
+    console.log('home fun comp render');
 
     return (
         <div>
-            <PageTitle>Home Users {props.stmt_id} : {props.stmt_type}</PageTitle>
+            <PageTitle>Home Fun</PageTitle>
             <List>
                 {
                     props.statement_list &&
@@ -50,7 +37,7 @@ const Home = (props) => {
                                     <li
                                         className={props.stmt_id && props.stmt_id == v.id ? 'active' : null}
                                         key={v.id}
-                                        onClick={() => setCompanyData({ stmt_id: v.id })}>{v.name}
+                                        onClick={() => setInfoStmtId(v.id)}>{v.name}
                                     </li>
                                 )
                             })
@@ -67,7 +54,9 @@ const Home = (props) => {
                                     <li
                                         className={props.stmt_type && props.stmt_type == v.id ? 'active' : null}
                                         key={v.id}
-                                        onClick={() => setCompanyData({ stmt_type: v.id })}>{v.name}</li>
+                                        onClick={() => setInfoStmtType(v.id)}>
+                                        {v.name}
+                                    </li>
                                 )
                             })
                         }
@@ -76,13 +65,6 @@ const Home = (props) => {
 
             </List>
 
-            {
-                users.map((person, index) => {
-                    return (
-                        <div key={index} >{person.name}</div>
-                    )
-                })
-            }
         </div>
     )
 }
@@ -127,10 +109,8 @@ let List = styled.div`
 `;
 
 const mapStateToProps = (state) => {
-    let { statement_list, statement_type, stmt_id, stmt_type, company } = state.finance;
-    return {
-        statement_list, statement_type, stmt_id, stmt_type, company
-    }
+    let { statement_list, statement_type, stmt_id, stmt_type } = state.finance;
+    return { statement_list, statement_type, stmt_id, stmt_type }
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -141,4 +121,5 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default React.memo(connect(mapStateToProps, mapDispatchToProps)(Home));
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeFun);

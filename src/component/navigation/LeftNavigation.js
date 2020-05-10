@@ -6,19 +6,21 @@ const LeftNavigation = (props) => {
     return (
         <>
             <input type="checkbox" id="check" />
-            <label for="check">
-                <i class="fas fa-bars" id="btn"></i>
-                <i class="fas fa-times" id="cancel"></i>
+            <label htmlFor="check">
+                <i className="fas " id="btn">=</i>
+                <i className="fas " id="cancel">X</i>
             </label>
 
             <div className='sidebar'>
                 <header>My App</header>
                 <ul>
-                    <li><Link to='/'  ><span><i class="fas fa-adjust"></i>Dashbord</span></Link></li>
-                    <li><Link to='/about'  ><span><i class="fas fa-archway"></i>About</span></Link></li>
-                    <li><Link to='/shop'  ><span><i class="fas fa-stream"></i>Shop</span></Link></li>
-                    <li><Link to='/career'  ><span><i class="fab fa-apple"></i>Career</span></Link></li>
-                    <li><Link to='/contact'  ><span><i class="fas fa-envelope"></i>Contact</span></Link></li>
+                    <li><Link to='/'  ><span><i className="fas">D</i>Dashbord</span></Link></li>
+                    {/* <li><Link to='/'  ><span><i className="fas fa-adjust"></i>Dashbord</span></Link></li> */}
+                    <li><Link to='/about'  ><span><i className="fas">A</i>About</span></Link></li>
+                    <li><Link to='/shop'  ><span><i className="fas ">S</i>Shop</span></Link></li>
+                    <li><Link to='/career'  ><span><i className="fab ">C</i>Career</span></Link></li>
+                    <li><Link to='/contact'  ><span><i className="fas ">C</i>Contact</span></Link></li>
+                    <li><Link to='/homefun'  ><span><i className="fas ">H</i>Home Fun</span></Link></li>
                 </ul>
             </div>
         </>
