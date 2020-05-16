@@ -14,18 +14,26 @@ const Home = (props) => {
     console.log('home comp render');
 
     return (
-        <div>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+
+            Env : { process.env.NODE_ENV }
             <PageTitle>Home</PageTitle>
 
-            <StatementList />
+            <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
 
-            <Button style={{ marginBottom: '10px'  }} variant="contained" color="primary"
-                onClick={() => props.getStatementType()}>Type</Button>
+                <div>
+                    <StatementList />
+                    <Button style={{ marginBottom: '10px' }} variant="contained" color="primary"
+                        onClick={() => props.getStatementType()}>Type</Button>
+                    <StatementType />
+                    <StatementTypeFun />
+                </div>
 
-            <StatementType />
+                <div style={{ border: '1px solid #032531', width: '100%', borderTop: 'none' , marginLeft : '10px' }}>
+                    
+                </div>
 
-            <StatementTypeFun />
-
+            </div>
             {
                 users.map((person, index) => {
                     return (
