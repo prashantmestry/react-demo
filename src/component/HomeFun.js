@@ -27,7 +27,7 @@ const HomeFun = (props) => {
     return (
         <div>
             <PageTitle>Home Fun</PageTitle>
-            <List>
+            <div className='list'>
                 {
                     props.statement_list &&
                     <ul>
@@ -63,50 +63,11 @@ const HomeFun = (props) => {
                     </ul>
                 }
 
-            </List>
+            </div>
 
         </div>
     )
 }
-
-let List = styled.div`
-    display : flex;
-    flex-direction : column;
-    width:150px;
-    margin-top : 10px;
-    justify-content : center;    
-
-    ul{
-        border : 1px solid #2ec5e8;
-        padding:5px;
-        border-radius : 5px;
-    }
-    ul:first-child{        
-        margin-bottom:20px;        
-    }
-
-    li {        
-        padding:10px;
-        border-bottom : 1px solid rgba(255,255,255,.1);
-        color : #777;
-        font-size:15px;     
-        
-        :hover{
-            color : #2ec5e8;
-            cursor : pointer;            
-            border-bottom : 1px solid #2ec5e8;
-            padding-left:12px;
-            transition : all .3s;
-        }
-    }
-    li.active { 
-        color : #2ec5e8;
-        border-bottom : 1px solid #2ec5e8;
-    }   
-    li:last-child{    
-    border-bottom:none;
-    }
-`;
 
 const mapStateToProps = (state) => {
     let { statement_list, statement_type, stmt_id, stmt_type } = state.finance;

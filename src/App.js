@@ -6,6 +6,8 @@ import TopLinks from './component/navigation/TopLinks';
 import Home from './component/Home';
 import HomeFun from './component/HomeFun';
 import About from './component/about/About';
+import User from './component/user/User';
+
 
 function App(props) {
 
@@ -15,14 +17,13 @@ function App(props) {
         <LeftNavigation />
         <section>
           <TopLinks />
-          <div style={{ padding : '10px' }}>
+          
             <Switch>
               <Route exact path='/' ><Home /></Route>
               <Route exact path='/about' ><About /></Route>
-              <Route exact path='/shop' ><About /></Route>
+              <Route exact path='/shop' ><User /></Route>
               <Route exact path='/homefun' ><HomeFun /></Route>
-            </Switch>
-          </div>
+            </Switch>          
         </section>
       </BrowserRouter>
     </div>

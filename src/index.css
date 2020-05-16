@@ -21,3 +21,85 @@ code {
   text-decoration: none;
 }
 
+
+
+
+
+.list
+{
+    display : flex;
+    flex-direction : column;
+    width:170px;    
+    justify-content : center;    
+}
+
+.list .notop{
+  border-top: none;
+}
+
+.list > ul{
+        border : 1px solid #032431;                 
+    }
+
+.list > ul:first-child{        
+        margin-bottom:10px;        
+    }
+
+  .list > ul > li {        
+        padding:8px;
+        border-bottom : 1px solid rgba(255,255,255,.1);
+        color : #777;
+        font-size:12px;                             
+    }    
+
+  .list > ul > li:hover{
+      color : #2ec5e8;
+      cursor : pointer;            
+      border-bottom : 1px solid #2ec5e8;
+      padding-left:12px;
+      transition : all .3s;
+  }    
+  
+  .list > ul > .active { 
+        color : #2ec5e8;
+        border-bottom : 1px solid #2ec5e8;
+    }   
+
+   .list > ul > li:last-child{    
+      border-bottom:none;
+    }
+
+
+
+.top_links{
+    background : #032431;    
+    border-bottom: 1px solid #1f3946;
+    box-sizing: border-box;  
+    height: 41px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top_links > ul{
+  display: flex; 
+  padding-top:10px;
+}
+  
+.top_links > ul > li {  
+  text-align: center;
+  list-style: none;    
+}
+
+.top_links > ul > li > a{
+  display: block;
+  width: 100px;
+  text-decoration: none;  
+  line-height: 30px;
+}
+
+.top_links > ul > li:hover a{
+  background:  #000;
+  color : #fff;  
+  border-radius: 4px;
+}

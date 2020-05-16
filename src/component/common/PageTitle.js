@@ -3,16 +3,15 @@ import styled from 'styled-components';
 
 const PageTitle = (props) => {
     return (
-        <H2Title>{props.children}</H2Title>
+        <Title>{props.children}</Title>
     )
 }
 
-
-let H2Title = styled.h2`
-   border-bottom :1px solid #fff; 
-   padding-bottom:10px;
+let Title = styled.h2`   
    text-align :right;
-   font-size : 20px;
+   font-size : 15px;
+   margin :0;
+   padding:10px;
+   border-bottom : 1px solid  #032531;
 `
-
 export default PageTitle;

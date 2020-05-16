@@ -1,19 +1,19 @@
 
 .sidebar{
     position: fixed;
-    left : -250px;
+    left : -200px;
     height: 100%;
-    width: 250px;
+    width: 200px;
     background: #042331;
     transition: all .3s ease;
     border-right: 1px solid #053245;
   }
   
   .sidebar header{
-    font-size: 22px;
+    font-size: 12px;
     color : #fff;
     text-align: center;
-    line-height: 70px;
+    line-height: 40px;
     background: #063146;
     user-select: none;
   }
@@ -22,14 +22,14 @@
     display: block;
     height: 100%;
     width: 100%;
-    line-height: 65px;
-    font-size: 20px;
+    line-height: 40px;
+    font-size: 12px;
     color: #fff;
     padding-left: 40px;
     box-sizing: border-box;
     border-top: 1px solid rgba(255,255,255,.1);
     border-bottom: 1px solid black;
-    transition: all .2s ease;
+    transition: all .3s ease;
   }
   
   ul li:hover span{
@@ -44,6 +44,11 @@
     display: none;
   }
   
+  label
+  {            
+    position: absolute;
+  }
+
   label #btn , label #cancel{
     position: absolute;
     cursor: pointer;
@@ -52,8 +57,8 @@
   
   label #btn{
     left : 10px;
-    top : 25px;
-    font-size: 20px;
+    top : 10px;
+    font-size: 12px;
     color: #fff;
     z-index: 5;
     border-radius: 3px;
@@ -64,8 +69,8 @@
   label #cancel{
     z-index: 10;
     left: -195px;
-    top: 42px;
-    font-size: 20px;    
+    top: 10px;
+    font-size: 12px;    
     color : #fff;
     padding: 4px 9px;   
     transition: all .3s ease;
@@ -76,17 +81,17 @@
   }
   
   #check:checked ~ label #btn{
-    left: 250px;
+    left: 200px;
     opacity: 0;
     pointer-events: none;
   }
   
   #check:checked ~section{
-    margin-left: 250px;
+    margin-left: 200px;
   }
   
   #check:checked ~ label #cancel{
-    left : 195px;
+    left : 150px;
   }
   
   section{    
@@ -104,7 +109,7 @@
 .links ul {
   display: flex;
   justify-content: center;
-  padding-top:25px;
+  padding-top:15px;
 }
 
 .links ul li{
@@ -113,8 +118,8 @@
 
 .links ul li a{
   color : #fff;
-  font-size: 20px;
-  padding:10px 15px 10px 15px;
+  font-size: 12px;
+  padding:5px 10px;
 }
 
 .links ul li:hover a{
