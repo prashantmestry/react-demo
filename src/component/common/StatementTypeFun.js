@@ -7,7 +7,7 @@ const StatementTypeFun = (props) => {
     console.log('statementFun type render');
 
     return (
-        <div className='list'>            
+        <div className='list'>
             {
                 props.statement_type &&
                 <ul>
@@ -17,7 +17,12 @@ const StatementTypeFun = (props) => {
                                 <li
                                     className={props.stmt_type && props.stmt_type == v.id ? 'active' : null}
                                     key={v.id}
-                                    onClick={() => props.setCompanyInfo({ stmt_type: v.id })}> {v.name}</li>
+                                    onClick={() => {
+                                        if (props.stmt_type != v.id) {
+                                            props.setCompanyInfo({ stmt_type: v.id })
+                                        }
+                                    }}
+                                > {v.name}</li>
                             )
                         })
                     }

@@ -19,6 +19,7 @@ code {
   padding:0;
   list-style: none;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 
@@ -29,13 +30,10 @@ code {
 {
     display : flex;
     flex-direction : column;
-    width:170px;    
+    width:100%;    
     justify-content : center;    
 }
 
-.list .notop{
-  border-top: none;
-}
 
 .list > ul{
         border : 1px solid #032431;                 
@@ -103,3 +101,12 @@ code {
   color : #fff;  
   border-radius: 4px;
 }
+
+
+
+
+.table_loading , .table_error{
+  text-align: center;
+  padding:5px;
+}
+

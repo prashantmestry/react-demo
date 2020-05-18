@@ -1,5 +1,14 @@
 export {
     getStatementList,
     getStatementType,
-    setCompanyInfo
+    setCompanyInfo,
+
+    getTableDataStart,
+    getTableDataFail,
+
+    getTableData
 } from './finance/financeAction';
+
+export {
+    getRatioData
+} from './ratio/ratioAction';

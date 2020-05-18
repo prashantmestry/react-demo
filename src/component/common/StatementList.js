@@ -11,7 +11,7 @@ class StatementList extends React.Component {
     }
 
     render() {
-    
+
         const { statement_list, setCompanyInfo, stmt_id } = this.props;
 
         console.log('statement list render ');
@@ -21,14 +21,18 @@ class StatementList extends React.Component {
             <div className='list'>
                 {
                     statement_list &&
-                    <ul className='notop'>
+                    <ul>
                         {
                             statement_list.map(v => {
                                 return (
                                     <li
                                         className={stmt_id && stmt_id == v.id ? 'active' : null}
                                         key={v.id}
-                                        onClick={() => setCompanyInfo({ stmt_id: v.id })}>
+                                        onClick={() => {
+                                            if (stmt_id != v.id) {
+                                                setCompanyInfo({ stmt_id: v.id })
+                                            }
+                                        }}>
                                         {v.name}
                                     </li>
                                 )
@@ -54,7 +58,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         setCompanyInfo: (obj) => dispatch(setCompanyInfo(obj)),
-        getStatementList : () => dispatch(getStatementList())
+        getStatementList: () => dispatch(getStatementList())
 
     }
 }

@@ -9,9 +9,10 @@ const PageTitle = (props) => {
 
 let Title = styled.h2`   
    text-align :right;
-   font-size : 15px;
+   font-size : 14px;
    margin :0;
    padding:10px;
    border-bottom : 1px solid  #032531;
+   color : orange;
 `
 export default PageTitle;

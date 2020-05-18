@@ -1,4 +1,5 @@
 import React from 'react';
+import { menu_icon } from '../../images';
 import { Link } from 'react-router-dom';
 import './LeftNavigation.css';
 
@@ -7,7 +8,11 @@ const LeftNavigation = (props) => {
         <>
             <input type="checkbox" id="check" />
             <label htmlFor="check">
-                <i className="fas " id="btn">=</i>
+                {/* <i className="fas " id="btn"> */}
+                <span id="btn">
+                    <img src={menu_icon} alt='menu' style={{ background: 'orange', width: '15px' }} />
+                </span>
+                {/* </i> */}
                 <i className="fas " id="cancel">X</i>
             </label>
 

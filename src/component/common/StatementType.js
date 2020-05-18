@@ -20,7 +20,11 @@ class StatementType extends React.Component {
                                     <li
                                         className={stmt_type && stmt_type == v.id ? 'active' : null}
                                         key={v.id}
-                                        onClick={() => setCompanyInfo({ stmt_type: v.id })}>
+                                        onClick={() => {
+                                            if (stmt_type != v.id) {
+                                                setCompanyInfo({ stmt_type: v.id })
+                                            }
+                                        }}>
                                         {v.name}
                                     </li>
                                 )
