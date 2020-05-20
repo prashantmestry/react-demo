@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import GeneralTable from '../generaltable/GeneralTable';
-import { roundNumber } from '../../../util';
+import { roundNumber, onlyRoundedInteger } from '../../../util';
 
 import * as actions from '../../../redux/actions';
 import { connect } from 'react-redux';
@@ -49,12 +49,12 @@ const RatioTable = (props) => {
                 obj.Header = v;
                 obj.accessor = v;
                 obj.width = 150;
-                obj.visible = true;                                                
+                obj.visible = true;
 
                 if (v.toLowerCase() == 'name') {
                     obj.position = 'left';
-                    obj.width = 200;                                        
-                    obj.sortable = true;                    
+                    obj.width = 200;
+                    obj.sortable = true;
                 }
                 if (v.toLowerCase() === 'action') {
                     obj.position = 'left';
@@ -82,9 +82,9 @@ const RatioTable = (props) => {
             makeData = (data, new_temp_headerArray) => {
                 let temp = {};
                 new_temp_headerArray.forEach(v => {
-                    let d = data.find(v1 => v1.date.substring(0, 10) === v.accessor);
-                    if (d) {                        
-                        temp[v.accessor] =  roundNumber(d.data.value);
+                    let d = data.find(v1 => v1.date.substring(0, 10) === v.accessor);                    
+                    if (d) {
+                        temp[v.accessor] = onlyRoundedInteger(d.data.value);
                     } else {
                         temp[v.accessor] = 0;
                     }
@@ -96,7 +96,6 @@ const RatioTable = (props) => {
                 return {
                     ...makeData(v.ratioValue, headers),
                     Name: v.ratioShortName ? v.ratioShortName : v.ratioKey
-                    //Name: v.ratioShortName
                 }
             });
 
@@ -137,6 +136,7 @@ const RatioTable = (props) => {
                         <GeneralTable
                             headerData={headerData}
                             bodyData={bodyData}
+                            height='500px'
                         />
                     }
 

@@ -27,7 +27,7 @@ function App(props) {
       <BrowserRouter>
         <LeftNavigation />
         <section>
-          <TopLinks />
+          {/* <TopLinks /> */}
 
           <Switch>
             <Route exact path='/' ><Home /></Route>
@@ -35,6 +35,7 @@ function App(props) {
             <Route exact path='/shop' ><User /></Route>
             <Route exact path='/homefun' ><HomeFun /></Route>
           </Switch>
+
         </section>
       </BrowserRouter>
     </div>

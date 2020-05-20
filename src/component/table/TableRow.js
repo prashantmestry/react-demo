@@ -55,8 +55,8 @@ class TableRow extends React.PureComponent {
                                                 obj.accessor === 'title' &&
                                                 <div style={{ alignItems: 'center', display: 'flex', justifyContent: 'space-between' }}>
                                                     <div style={{
-                                                        textAlign: 'left',
-                                                        margin: '5px',
+                                                        textAlign: 'left',                                                        
+                                                        margin: '5px',                                                        
                                                         cursor: `${(item.children && item.children.length > 0) ? 'pointer' : 'auto'}`,
                                                         width: '100%', paddingLeft: `${depth * 15}px`
                                                     }}
@@ -64,7 +64,7 @@ class TableRow extends React.PureComponent {
                                                     >
                                                         {
                                                             (item.children && item.children.length > 0) ?
-                                                                <span style={{ fontWeight: '600' }}>{item.title}</span>
+                                                                <span>{item.title}</span>
                                                                 :
                                                                 item.title
                                                         }

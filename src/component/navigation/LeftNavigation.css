@@ -95,10 +95,10 @@
   }
   
   section{    
-    height: 100vh;
+    height: 100%;
     transition:  all .3s;
     background: #02171f;
-    color: #fff;
+    color: #fff;    
   }
 
 

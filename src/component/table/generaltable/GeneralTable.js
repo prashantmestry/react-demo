@@ -11,24 +11,24 @@ const GeneralTable = (props) => {
     useEffect(() => {
         setHeaderData(props.headerData);
         setBodyData(props.bodyData);
-    }, [props.headerData , props.bodyData]);
+    }, [props.headerData, props.bodyData]);
 
 
     return (
         <TableBox
             theme={{
                 headerbg: '#02181f',
-                tableHeight: '700px',
                 tableBorder: '#022631',
                 text: '#c5c5c5',
                 darkColor: '#2dc5e8',
                 trHover: '#021217'
             }}
+            tableHeight=  { props.height || 'none' }
         >
             <div className='table_scroll'>
                 {
                     <table className='finance_table'>
-                        <thead>                            
+                        <thead>
                             <TableHeader
                                 headerArrayData={headerData}
                             />
@@ -41,8 +41,9 @@ const GeneralTable = (props) => {
                                             <RowDisplay
                                                 item={item}
                                                 depth={0}
-                                                key={i}                                                
+                                                key={i}
                                                 headerArrayData={headerData}
+                                                {...props}
                                             />
                                         )
                                     })
@@ -51,7 +52,6 @@ const GeneralTable = (props) => {
                                         <td colSpan={headerData.length}>No Record  Found</td>
                                     </tr>
                             }
-                            
                         </tbody>
                     </table>
                 }
@@ -67,7 +67,6 @@ background: ${props => props.theme.bg};
 border-radius: 5px;
 font-size:12px;
 color : ${props => props.theme.text};
-
 
 .table_scroll {
     position: relative;
@@ -108,8 +107,7 @@ color : ${props => props.theme.text};
         display : block;        
         float:right;
         width : max-content;        
-        padding : 10px;
-        font-weight: 600;        
+        padding : 10px;        
     }
   }
   
@@ -159,6 +157,7 @@ color : ${props => props.theme.text};
     min-width: 200px;  
     color : ${ props => props.theme.darkColor};
     font-size:13px;
+    font-weight : 400;
   }
   
 `;

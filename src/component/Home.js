@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 //import DataTable from '../component/table/DataTable';
 import DataTableFun from '../component/table/DataTableFun';
 import RatioTable from '../component/table/ratioTable/RatioTable';
+import Graph from '../component/common/chart/Graph';
 import StatementList from './common/StatementList';
 //import StatementType from './common/StatementType';
 import StatementTypeFun from './common/StatementTypeFun';
+import ExcelRead from '../component/excelread/ExcelRead';
 import PageTitle from './common/PageTitle';
-import Button from '@material-ui/core/Button';
+import { Button , Modal } from 'antd'
 
 import * as actions from '../redux/actions';
 import { connect } from 'react-redux';
@@ -16,7 +18,7 @@ const Home = (props) => {
 
     useEffect(() => {
         props.setCompanyInfo({
-            stmt_id: 'ratio_data',
+            stmt_id: 'external',
             stmt_type: 'sa'
         })
     }, []);
@@ -71,12 +73,16 @@ const Home = (props) => {
 
                     {
                         props.stmt_id && props.stmt_id === 'fundware' &&
-                        <div>fundware</div>
+                        <div style={{ width : '100%' , margin : '0 auto'}}>
+                            <Graph />
+                        </div>
                     }
 
                     {
                         props.stmt_id && props.stmt_id === 'external' &&
-                        <div>external data</div>
+                        <div>
+                            <ExcelRead />                
+                        </div>
                     }
                 </div>
 

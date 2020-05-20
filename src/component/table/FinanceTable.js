@@ -20,12 +20,13 @@ const FinanceTable = (props) => {
         <TableBox
             theme={{
                 headerbg: '#02181f',
-                tableHeight: '400px',
-                tableBorder: '#022631',                
-                text: '#c5c5c5',             
+                tableBorder: '#022631',
+                text: '#c5c5c5',
                 darkColor: '#2dc5e8',
                 trHover: '#021217'
             }}
+            tableHeight='800px'
+
         >
             <div className='table_scroll'>
                 {
@@ -101,8 +102,7 @@ color : ${props => props.theme.text};
     color : ${ props => props.theme.darkColor};
     position: -webkit-sticky;
     position: sticky;
-    text-align : webkit-right;
-    font-weight : 100;
+    text-align : webkit-right;    
     top: 0;            
 
     .date_box
@@ -110,8 +110,7 @@ color : ${props => props.theme.text};
         display : block;        
         float:right;
         width : max-content;        
-        padding : 10px;
-        font-weight: 600;        
+        padding : 10px;        
     }
   }
   
@@ -135,16 +134,13 @@ color : ${props => props.theme.text};
 
   .table_scroll tbody th:first-child {
       background : ${props => props.theme.headerbg};      
-      color : ${ props => props.theme.darkColor}
-      font-weight : 100;
-      padding-left:5px;
+      color : ${ props => props.theme.darkColor}            
   }
 
   .table_scroll thead th:first-child,
   .table_scroll tfoot th:first-child {
     z-index: 5;
-    background: ${props => props.theme.headerbg};    
-    font-weight : 100;
+    background: ${props => props.theme.headerbg};       
   }
 
   .table_scroll tbody tr {
@@ -161,6 +157,8 @@ color : ${props => props.theme.text};
     min-width: 350px;  
     color : ${ props => props.theme.darkColor};
     font-size:13px;
+    font-weight : 400;
+    padding-left : 10px;
   }
   
 `;
