@@ -6,7 +6,7 @@ export const onlyRoundedInteger = (data) =>{
 
     if(data != 'none')
     {
-        return roundNumber(data);
+        return roundNumber(data); 
     }
     return '-';
 }
